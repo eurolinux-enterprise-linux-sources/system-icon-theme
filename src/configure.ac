@@ -1,0 +1,21 @@
+AC_INIT(system-icon-theme, 6.0.0)
+
+AM_INIT_AUTOMAKE([dist-bzip2])
+AM_MAINTAINER_MODE
+IT_PROG_INTLTOOL
+
+GETTEXT_PACKAGE=system-icon-theme
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE")
+AM_GLIB_GNU_GETTEXT
+
+ICON_THEME_DIR=${datadir}/icons
+AC_SUBST(ICON_THEME_DIR)
+
+ALL_LINGUAS=""
+
+AC_OUTPUT([
+  Makefile
+  theme/Makefile
+  po/Makefile.in
+])
